@@ -22,7 +22,7 @@ values = pickle.load( open( "save.values", "rb" ))
 models = np.array([[10, -3, 1], [10, -3, 0],[20, -6, 1], [20, -6, 0]])
 
 
-area, total_area_of_the_sky = bfl.MC_sim(Data['RA'], Data['DEC'], n_points=100000, gamma=0.0006, nu=0.0013, plot=0)
+area, total_area_of_the_sky = bfl.MC_sim(Data['RA'], Data['DEC'], n_points=100000, gamma=0.0006, nu=0.0013, plot=1)
 
 x, y, y_err, delta_x, weights, counts, Volume, width = bfl.fitting_data(Data['RA'], Data['DEC'], Data['log_M_200'], Data['error_low'], Data['error_up'], Data['redshift'], selectionfunction=1, cut_off=-6, hist_bins=20, plot=1)
 
