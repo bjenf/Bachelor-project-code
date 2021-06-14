@@ -309,7 +309,7 @@ def MCMC_run_interpolate(itt, x, y, yerr, counts, Volume, width, discard, points
     Val = []
 
     for i in range(ndim):
-        mcmc = np.percentile(flat_samples[:, i], [0.15, 50, 99.85])
+        mcmc = np.percentile(flat_samples[:, i], [16, 50, 84])
         Val.append(mcmc[1])
         q = np.diff(mcmc)
         print(f"{labels[i]}= {mcmc[1]:.3f} with lower error = {-q[0]:.4f} and upper error = {q[1]:.4f}")
@@ -408,7 +408,7 @@ def MCMC_run_interpolate_gauss(itt, x, y, yerr, counts, Volume, width, discard, 
     Val = []
 
     for i in range(ndim):
-        mcmc = np.percentile(flat_samples[:, i], [0.15, 50, 99.85])
+        mcmc = np.percentile(flat_samples[:, i], [16, 50, 84])
         Val.append(mcmc[1])
         q = np.diff(mcmc)
         print(f"{labels[i]}= {mcmc[1]:.3f} with lower error = {-q[0]:.4f} and upper error = {q[1]:.4f}")
@@ -542,7 +542,7 @@ def MCMC_run_interpolate_gauss_error(itt, x, y, yerr, counts, Volume, width, wei
     Val = []
 
     for i in range(ndim):
-        mcmc = np.percentile(flat_samples[:, i], [0.15, 50, 99.85])
+        mcmc = np.percentile(flat_samples[:, i], [16, 50, 84])
         Val.append(mcmc[1])
         q = np.diff(mcmc)
         print(f"{labels[i]}= {mcmc[1]:.3f} with lower error = {-q[0]:.4f} and upper error = {q[1]:.4f}")
